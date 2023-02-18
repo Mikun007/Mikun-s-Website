@@ -9,3 +9,29 @@ root.render(
   </React.StrictMode>
 );
 
+
+window.addEventListener("load", () => {
+
+  // navBar Animation while scrolling.
+  const body = document.querySelector("body");
+
+  body.addEventListener("wheel", (event) => {
+    const navBar = document.querySelector(".fixed-navbar-position-home");
+
+
+    if (event.deltaY > 0) {
+
+      if (navBar.classList.contains("animation-up")) {
+        navBar.classList.replace("animation-up", "animation-down")
+      };
+      navBar.classList.add("animation-down")
+
+    };
+
+
+    if (event.deltaY < 0) {
+      navBar.classList.replace("animation-down", "animation-up");
+    };
+
+  });
+});

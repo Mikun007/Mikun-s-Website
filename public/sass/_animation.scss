@@ -1,0 +1,28 @@
+// Nav-Bar Animation
+.animation-down {
+    animation: animate_down 0.2s ease-out 0s 1 normal forwards;
+}
+
+@keyframes animate_down {
+    0% {
+        bottom: 8%;
+    };
+
+    100% {
+        bottom: -20%;
+    };
+};
+
+.animation-up {
+    animation: animate_up 0.2s ease-out 0s 1 normal forwards;
+}
+
+@keyframes animate_up {
+    0% {
+        bottom: -8%;
+    };
+
+    100% {
+        bottom: 8%;
+    };
+};
