@@ -34,4 +34,6 @@ window.addEventListener("load", () => {
     };
 
   });
+
+  document.getElementById("rotate_element").classList.add("infinite_rotation");
 });

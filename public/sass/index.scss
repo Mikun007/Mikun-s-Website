@@ -1,8 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@600&family=Open+Sans:wght@400;600&display=swap');
+
 body {
     margin: 30px 50px;
 };
+// Variables
+@import "variables";
 
+// Home Page and all of its section
 @import "home";
+@import "home_section_1";
 
+
+// Nav-bar
+@import "navbar";
+
+// All animation
 @import "animation";
 

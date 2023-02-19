@@ -1,0 +1,17 @@
+[33mcommit 61f11aba1c0089d9120b60831f6389f960b950db[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: mikun <mikundas@outlook.com>
+Date:   Sat Feb 18 16:03:56 2023 +0530
+
+    Added grid flex and NavBar functionality
+
+[33mcommit 72619de8940b4285925ec06f1a3cef2e43eb8764[m
+Author: mikun <mikundas@outlook.com>
+Date:   Sat Feb 18 10:35:37 2023 +0530
+
+    full setup completed
+
+[33mcommit 72bf48cfa2ecf0ab4707abfe28fcd3516db2df28[m
+Author: mikun <mikundas@outlook.com>
+Date:   Sat Feb 18 09:12:56 2023 +0530
+
+    Initialize project using Create React App

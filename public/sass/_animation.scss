@@ -26,3 +26,18 @@
         bottom: 8%;
     };
 };
+
+// Svg animation on profile picture
+.infinite_rotation {
+    animation: infinite_rotation 80s linear 2s infinite normal forwards;
+}
+
+@keyframes infinite_rotation {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
