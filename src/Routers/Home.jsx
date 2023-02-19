@@ -18,7 +18,7 @@ function Home() {
                             </div>
                             <div>
                                 <button><b>Contact Me</b></button>
-                                <a href="#">Projects  <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="#">Projects  <i className="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
 
