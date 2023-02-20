@@ -1,7 +1,12 @@
 function Section_4() {
     return(
         <section id="fourth_section_home">
-            section4
+            <div>
+                <a href="#">Favorite Movies</a>
+            </div>
+            <div>
+                <a href="#">Favorite Games</a>
+            </div>
         </section>
     )
 };

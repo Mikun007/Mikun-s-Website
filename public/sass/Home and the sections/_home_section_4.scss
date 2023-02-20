@@ -1,0 +1,19 @@
+#fourth_section_home {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 29px;
+    margin-top: 2rem;
+    padding: 0rem 2rem;
+
+    & > div > a {
+        color: $Dark_light_3;
+
+        &:hover {
+            color: $Dark;
+        }
+    }
+}

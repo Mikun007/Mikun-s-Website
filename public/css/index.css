@@ -87,6 +87,24 @@ body {
   top: 35%;
 }
 
+#fourth_section_home {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 29px;
+  margin-top: 2rem;
+  padding: 0rem 2rem;
+}
+#fourth_section_home > div > a {
+  color: #443E5B;
+}
+#fourth_section_home > div > a:hover {
+  color: #070412;
+}
+
 footer {
   margin-top: 2rem;
   background-color: #0D0724;
