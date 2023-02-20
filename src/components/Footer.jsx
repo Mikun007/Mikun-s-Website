@@ -1,0 +1,38 @@
+function Footer() {
+    return (
+        <footer>
+            
+            <div className="flex_footer">
+                <div>
+                    <p>contact Details :</p>
+                    <div>
+                        <i className="icon-col fa-brands fa-linkedin fa-2x"></i>
+                        <a href="#"><p>My Linked-lin Handle</p></a>
+                    </div>
+                    <div>
+                        <i className="icon-col fa-brands fa-instagram fa-2x"></i>
+                        <a href="#"><p>My Instagram Handle</p></a>
+                    </div>
+                    <div>
+                        <i className="icon-col fa-brands fa-twitter fa-2x"></i>
+                        <a href="#"><p>My Twitter Handle</p></a>
+                    </div>
+
+                </div>
+
+                <div>
+                    <h1 className="Logo">
+                        BD.
+                    </h1>
+                </div>
+                
+            </div>
+
+            <div className="copy_right">
+                <p>Copyright © 2023 Budhadev Das. All rights reserved.</p>
+            </div>
+        </footer>
+    )
+};
+
+export default Footer;

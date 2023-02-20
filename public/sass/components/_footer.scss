@@ -1,0 +1,57 @@
+footer {
+    margin-top: 2rem;
+    background-color: $Dark_light_1;
+    border-radius: 16px;
+    padding: 4rem ;
+
+    & .flex_footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            margin: 0;
+            color: $Dark_light_5;
+        }
+
+        & .icon-col {
+            color: $Dark_light_5;
+        }
+
+        & div:first-child {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            & > div {
+                display: flex;
+                gap: 34px;
+                align-items: center;
+            }
+
+            & > div > a {
+                text-decoration: none;
+                color: $Dark_light_5;
+
+                &:hover {
+                    text-decoration: underline;
+                    text-decoration: col;
+                }
+            }
+        }
+
+        & div h1 {
+            font-family: 'Abril Fatface';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 128px;
+            color: $Dark;
+        }
+    }
+
+    & div.copy_right > p {
+        text-align: center;
+        margin-top: 2rem;
+        color: $Dark_light_6;
+    }
+}

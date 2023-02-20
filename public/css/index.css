@@ -3,12 +3,6 @@ body {
   margin: 30px 50px;
 }
 
-.flex-container-home {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .grid-container-home {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -32,9 +26,9 @@ body {
 
 #first_section_home {
   display: inline-flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 24px 32px;
+  padding: 2rem 4rem;
   background-color: #FFEB3B;
   border-radius: 16px 16px 0px 0px;
 }
@@ -93,28 +87,107 @@ body {
   top: 35%;
 }
 
+footer {
+  margin-top: 2rem;
+  background-color: #0D0724;
+  border-radius: 16px;
+  padding: 4rem;
+}
+footer .flex_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .flex_footer p {
+  margin: 0;
+  color: #A29FAD;
+}
+footer .flex_footer .icon-col {
+  color: #A29FAD;
+}
+footer .flex_footer div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+footer .flex_footer div:first-child > div {
+  display: flex;
+  gap: 34px;
+  align-items: center;
+}
+footer .flex_footer div:first-child > div > a {
+  text-decoration: none;
+  color: #A29FAD;
+}
+footer .flex_footer div:first-child > div > a:hover {
+  text-decoration: underline;
+  text-decoration: col;
+}
+footer .flex_footer div h1 {
+  font-family: "Abril Fatface";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 128px;
+  color: #070412;
+}
+footer div.copy_right > p {
+  text-align: center;
+  margin-top: 2rem;
+  color: #D0CFD6;
+}
+
 div.fixed-navbar-position-home {
   position: fixed;
   left: 50%;
   transform: translatex(-50%);
   bottom: 8%;
-  background-color: lightpink;
+  background-color: #F9F9F9;
   padding: 1rem 3rem;
   border-radius: 2rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 100;
 }
 div.fixed-navbar-position-home nav {
   display: flex;
   gap: 15vh;
 }
 div.fixed-navbar-position-home nav > * {
-  margin: 0px;
+  margin: 0;
+  text-decoration: none;
+  display: inline-flex;
+  gap: 8px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #0D0724;
+  padding: 8px 24px;
+}
+div.fixed-navbar-position-home nav > *:hover {
+  color: #443E5B;
+}
+div.fixed-navbar-position-home nav > *:first-child {
+  font-family: "Abril Fatface";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #736E84;
+}
+div.fixed-navbar-position-home nav > * i {
+  align-self: center;
 }
 div.fixed-navbar-position-home nav:first-child {
   margin-left: 24px;
 }
 div.fixed-navbar-position-home nav:last-child {
   margin-right: 24px;
+}
+
+.active {
+  background-color: #F9F1A0;
+  border-radius: 2rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .animation-down {
@@ -137,6 +210,9 @@ div.fixed-navbar-position-home nav:last-child {
   0% {
     bottom: -8%;
   }
+  50% {
+    bottom: 12%;
+  }
   100% {
     bottom: 8%;
   }
@@ -151,5 +227,30 @@ div.fixed-navbar-position-home nav:last-child {
   }
   to {
     rotate: 360deg;
+  }
+}
+@media (max-width: 900px) {
+  div.fixed-navbar-position-home nav {
+    gap: 8vh;
+  }
+}
+@media screen and (max-width: 780px) {
+  div.fixed-navbar-position-home nav {
+    gap: 0.5vh;
+  }
+  div.fixed-navbar-position-home nav:first-child {
+    margin-left: 8px;
+  }
+  div.fixed-navbar-position-home nav:last-child {
+    margin-left: 8px;
+  }
+  .profile {
+    display: none;
+  }
+  .Logo {
+    display: none;
+  }
+  .fixed-navbar-position-home nav i {
+    display: none;
   }
 }

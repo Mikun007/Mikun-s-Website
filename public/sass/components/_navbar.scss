@@ -1,0 +1,65 @@
+// NAV BAR
+// fixed position
+div.fixed-navbar-position-home {
+    position: fixed;
+    left: 50%;
+    transform: translatex(-50%);
+    bottom: 8%;
+    background-color: $Dark_light_8;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 100;
+
+    // navbar item
+    & nav {
+        display: flex;
+        gap: 15vh;
+        
+        & > * {
+            margin: 0;
+            text-decoration: none;
+            display: inline-flex;
+            gap: 8px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            color: $Dark_light_1;
+            padding: 8px 24px;
+            
+
+            &:hover {
+                color: $Dark_light_3;
+            }
+
+            &:first-child {
+                font-family: 'Abril Fatface';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 24px;
+                color: $Dark_light_4;
+            }
+
+            & i {
+                align-self: center;
+            }
+        };
+
+        &:first-child {
+            margin-left: 24px;
+        };
+
+        &:last-child {
+            margin-right: 24px;
+        };
+    };
+};
+
+
+.active {
+    background-color: $light_main_light_3;
+    border-radius: 2rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
