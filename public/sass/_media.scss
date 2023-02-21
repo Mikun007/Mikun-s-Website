@@ -4,6 +4,15 @@
             gap: 8vh;
         }
     }
+
+    #first_section_home {
+        justify-content: center;
+    }
+
+    #third_section_home {
+        padding: 2rem;
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (max-width: 780px) {
@@ -31,4 +40,5 @@
     .fixed-navbar-position-home nav i {
         display: none;
     }
+
 }

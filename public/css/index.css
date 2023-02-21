@@ -87,6 +87,58 @@ body {
   top: 35%;
 }
 
+#third_section_home {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  background-color: #BAA6FF;
+  padding: 3rem 4rem;
+  border-radius: 16px;
+  gap: 16px;
+  margin-top: 2rem;
+}
+#third_section_home a {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin: 0;
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  background-color: #0D0724;
+}
+#third_section_home a:hover {
+  background-color: #070412;
+}
+#third_section_home a h3 {
+  font-family: "Montserrat";
+  color: #736E84;
+  text-decoration: underline;
+}
+#third_section_home a p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #E8E7EA;
+}
+#third_section_home a i {
+  color: #E8E7EA;
+}
+#third_section_home a:nth-child(1) {
+  grid-row: span 4;
+}
+#third_section_home a:nth-child(2) {
+  grid-row: span 2;
+}
+#third_section_home a:nth-child(3) {
+  grid-row: span 2;
+}
+
 #fourth_section_home {
   display: flex;
   justify-content: space-between;
@@ -250,6 +302,13 @@ div.fixed-navbar-position-home nav:last-child {
 @media (max-width: 900px) {
   div.fixed-navbar-position-home nav {
     gap: 8vh;
+  }
+  #first_section_home {
+    justify-content: center;
+  }
+  #third_section_home {
+    padding: 2rem;
+    grid-template-columns: 1fr;
   }
 }
 @media screen and (max-width: 780px) {
