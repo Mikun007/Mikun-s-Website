@@ -1,4 +1,7 @@
+
 function Footer() {
+    const d = new Date();
+    let year = d.getFullYear();
     return (
         <footer>
             
@@ -29,7 +32,7 @@ function Footer() {
             </div>
 
             <div className="copy_right">
-                <p>Copyright © 2023 Budhadev Das. All rights reserved.</p>
+                <p>Copyright © {year} Budhadev Das. All rights reserved.</p>
             </div>
         </footer>
     )

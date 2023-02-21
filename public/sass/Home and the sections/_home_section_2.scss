@@ -1,0 +1,35 @@
+#second_section_home {
+    & > .typing_area {
+        border: 1px solid red;
+        height: 5rem;
+        width: 42rem;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        overflow: hidden;
+
+        display: grid;
+        grid-template-columns: repeat(300, 1fr);
+        align-items: center;
+
+        & div:nth-child(1) {
+            grid-column: span 149;
+            justify-self: flex-end;
+        }
+
+        & div:nth-child(2) {
+            grid-column: span 0;
+            outline: 0px solid transparent;
+            color: blue;
+        }
+
+        & div:nth-child(3) {
+            grid-column: span 150;
+        }
+        }
+
+}
+
+.line_through {
+    text-decoration: line-through;
+}
