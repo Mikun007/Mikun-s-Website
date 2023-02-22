@@ -13,9 +13,9 @@ root.render(
 window.addEventListener("load", () => {
 
   // navBar Animation while scrolling.
-  const body = document.querySelector("body");
+  const body = document.querySelector("html");
 
-  // For touch Screen Mobile and tablet
+  // For touch-Screen Mobile and tablet
   let startY = null;
   let endY = null;
 

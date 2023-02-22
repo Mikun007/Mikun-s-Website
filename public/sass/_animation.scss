@@ -45,3 +45,59 @@
         rotate: 360deg;
     }
 }
+
+
+// Second Section
+// timer_svg animation
+.starting_animation {
+    stroke-dasharray: 357;
+    stroke-dashoffset: 357;
+    animation: x 1.5s linear 0s 1 forwards;
+}
+
+@keyframes x {
+    from {
+        stroke-dashoffset: 357;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+
+
+.timer_svg {
+    stroke-dasharray: 357;
+    stroke-dashoffset: 0;
+    animation: strock 60s linear 0s 1 forwards;
+}
+
+@keyframes strock {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 357;
+    }
+}
+
+.background_flash {
+    border-radius: 2rem;
+    animation: flash 0.5s ease-in 0s 1 normal forwards;
+}
+
+@keyframes flash {
+    0% {
+        box-shadow: 0px 0px 0px 0px $light_main;
+    }
+
+    50% {
+        box-shadow: 2px 2px 12px 3px $light_main;
+    }
+
+    100% {
+        box-shadow: 0px 0px 0px 0px $light_main;
+    }
+}

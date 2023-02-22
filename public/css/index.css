@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@600&family=Open+Sans:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:wght@300&family=Montserrat:wght@600&family=Open+Sans:wght@400;600&display=swap");
 body {
   margin: 30px 50px;
 }
@@ -87,10 +87,81 @@ body {
   top: 35%;
 }
 
+#second_section_home {
+  margin: 3rem 0rem;
+  padding: 3rem 0rem;
+  background-image: url("../../Frame 48.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+#second_section_home h1 {
+  text-align: center;
+  padding-bottom: 5rem;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 40px;
+}
+#second_section_home .timer_area {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 3rem;
+  margin-bottom: 5rem;
+}
+#second_section_home .timer_area span:first-child {
+  position: relative;
+  background-color: #ffffff;
+}
+#second_section_home .timer_area span:first-child .timer_in_text {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  text-align: center;
+}
+#second_section_home .timer_area span:first-child .timer_in_text p {
+  margin: 0;
+}
+#second_section_home .timer_area span:first-child .timer_in_text p:first-child {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+}
+#second_section_home .timer_area span:first-child .timer_in_text p:last-child {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-size: 12px;
+}
+#second_section_home .timer_area span span:last-child {
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  box-shadow: 2px 2px 12px 3px rgba(0, 0, 0, 0.25) inset;
+  background-color: #ffffff;
+}
+#second_section_home .timer_area span span:last-child p {
+  margin: 0;
+}
+#second_section_home .timer_area span span:last-child p:first-child {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+}
+#second_section_home .timer_area span span:last-child p:last-child {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-size: 12px;
+}
 #second_section_home > .typing_area {
-  border: 1px solid red;
-  height: 5rem;
-  width: 42rem;
+  background-color: #ffffff;
+  height: 8rem;
+  width: 80%;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -98,18 +169,33 @@ body {
   display: grid;
   grid-template-columns: repeat(300, 1fr);
   align-items: center;
+  box-shadow: 2px 2px 12px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 32px;
+  line-height: 25px;
+  color: #0D0724;
 }
 #second_section_home > .typing_area div:nth-child(1) {
   grid-column: span 149;
   justify-self: flex-end;
+  color: #D0CFD6;
 }
 #second_section_home > .typing_area div:nth-child(2) {
   grid-column: span 0;
   outline: 0px solid transparent;
-  color: blue;
+  color: #754DFF;
+  scroll-behavior: auto;
 }
 #second_section_home > .typing_area div:nth-child(3) {
   grid-column: span 150;
+}
+#second_section_home .buttons_div {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
 }
 
 .line_through {
@@ -328,6 +414,50 @@ div.fixed-navbar-position-home nav:last-child {
     rotate: 360deg;
   }
 }
+.starting_animation {
+  stroke-dasharray: 357;
+  stroke-dashoffset: 357;
+  animation: x 1.5s linear 0s 1 forwards;
+}
+
+@keyframes x {
+  from {
+    stroke-dashoffset: 357;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.timer_svg {
+  stroke-dasharray: 357;
+  stroke-dashoffset: 0;
+  animation: strock 60s linear 0s 1 forwards;
+}
+
+@keyframes strock {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 357;
+  }
+}
+.background_flash {
+  border-radius: 2rem;
+  animation: flash 0.5s ease-in 0s 1 normal forwards;
+}
+
+@keyframes flash {
+  0% {
+    box-shadow: 0px 0px 0px 0px #FFEA20;
+  }
+  50% {
+    box-shadow: 2px 2px 12px 3px #FFEA20;
+  }
+  100% {
+    box-shadow: 0px 0px 0px 0px #FFEA20;
+  }
+}
 @media (max-width: 900px) {
   div.fixed-navbar-position-home nav {
     gap: 8vh;
@@ -358,5 +488,8 @@ div.fixed-navbar-position-home nav:last-child {
   }
   .fixed-navbar-position-home nav i {
     display: none;
+  }
+  #contentEditableDiv {
+    visibility: hidden;
   }
 }

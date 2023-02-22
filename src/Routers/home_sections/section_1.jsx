@@ -3,6 +3,7 @@ import profile from "../../svg/profile.svg";
 import profilePic from "../../svg/profilepic.svg";
 
 function Section_1() {
+    
     return(
         <section id="first_section_home">
                 <div>
@@ -12,7 +13,9 @@ function Section_1() {
                         <h1>Website...</h1>
                     </div>
                     <div>
-                        <button><b>Hire_Me</b></button>
+                        <button onClick={() => {
+                            window.location.href = "mailto:mikundas2000@gmail.com";
+                        }}><b>Hire_Me</b></button>
                         <a href="#">Projects  <i className="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
