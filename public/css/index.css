@@ -90,8 +90,7 @@ body {
 #second_section_home {
   margin: 3rem 0rem;
   padding: 3rem 0rem;
-  background-image: url("../../Frame 48.png");
-  background-repeat: no-repeat;
+  background-image: url("../../Frame 48.svg");
   background-size: 100%;
 }
 #second_section_home h1 {
@@ -270,6 +269,10 @@ body {
 }
 #fourth_section_home > div > a:hover {
   color: #070412;
+}
+
+#grid-container-cv {
+  display: grid;
 }
 
 footer {
