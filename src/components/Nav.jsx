@@ -14,7 +14,7 @@ function Nav() {
     };
     return (
         <div className="fixed-navbar-position-home">
-                <nav>
+                <nav id="navbar">
                     <p>BD.</p>
                     <Link to="/" className={isActive("/")}><i className="fa-solid fa-house"></i>Home</Link>
                     <Link to="/cv" className={isActive("/cv")}><i className="fa-solid fa-address-card fa-1.5x"></i>CV</Link>

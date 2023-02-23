@@ -34,6 +34,9 @@ function Footer() {
             <div className="copy_right">
                 <p>Copyright © {year} Budhadev Das. All rights reserved.</p>
             </div>
+
+            {/* for sec of not getting unnesarry error */}
+            <div className="meters_div meter_1 meter_2 meter_3" style={{"display": "none"}}></div>
         </footer>
     )
 };

@@ -45,4 +45,26 @@
         visibility: hidden;
     }
 
+    #first_section_cv {
+        & p {
+            &:first-child, &:nth-child(2){
+                font-size: 34px;
+            }
+        }
+    }
+
+    #second_section_cv {
+        & > div {
+            display: block;  
+        }
+
+        & .introArea {
+            text-indent: 0%;
+        }
+
+        & .mark_shown_area {
+            justify-content: center;
+        }
+    }
+
 }

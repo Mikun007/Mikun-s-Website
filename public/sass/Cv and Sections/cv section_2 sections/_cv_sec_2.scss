@@ -1,0 +1,52 @@
+#second_section_cv{
+
+    & .mark_shown_area {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        margin-top: 10%;
+
+        & div {
+            position: relative;
+            & div {
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                top: 40%;
+                transform: translate(-50%, -50%);
+                left: 51%;
+
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+            }
+
+            & p {
+                text-align: center;
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 200;
+                font-size: 24px;
+            }
+
+            & .where {
+                font-size: 16px;
+                padding-top: 8px;
+            }
+        }
+    }
+}
+
+.meter_1 {
+    stroke-dasharray: 357;
+    stroke-dashoffset: 357;
+}
+.meter_2 {
+    stroke-dasharray: 357;
+    stroke-dashoffset: 357;
+}
+.meter_3 {
+    stroke-dasharray: 357;
+    stroke-dashoffset: 357;
+}

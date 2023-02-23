@@ -1,0 +1,11 @@
+#second_section_cv{
+    & .introArea {
+        grid-column: 2 / span 2;
+        text-align: justify;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
+    }
+}
