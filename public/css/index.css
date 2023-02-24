@@ -277,13 +277,14 @@ body {
 }
 
 #first_section_cv {
-  background-color: #FFEB3B;
-  padding: 6rem 2rem 6rem 2rem;
+  background-color: #F9F9F9;
+  padding: 6rem 2rem 4rem 2rem;
   text-align: center;
   border-radius: 16px;
 }
 #first_section_cv p {
   margin: 0;
+  opacity: 0;
 }
 #first_section_cv p:first-child, #first_section_cv p:nth-child(2) {
   font-family: "Montserrat";
@@ -300,6 +301,16 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #443E5B;
+}
+
+hr {
+  border: none;
+  border-top-style: dotted;
+  width: 60px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-top-width: 10px;
 }
 
 #second_section_cv {
@@ -321,13 +332,14 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 30px;
+  margin: 4rem 0rem;
 }
 
 #second_section_cv .mark_shown_area {
   display: flex;
   gap: 30px;
   justify-content: center;
-  margin-top: 10%;
+  margin: 4rem 0rem;
 }
 #second_section_cv .mark_shown_area div {
   position: relative;
@@ -369,6 +381,17 @@ body {
 .meter_3 {
   stroke-dasharray: 357;
   stroke-dashoffset: 357;
+}
+
+#second_section_cv .my_skills {
+  row-gap: 4rem;
+  column-gap: 16rem;
+  margin: 4rem 0rem;
+}
+#second_section_cv .my_skills > div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 footer {
@@ -502,7 +525,7 @@ div.fixed-navbar-position-home nav:last-child {
   }
 }
 .infinite_rotation {
-  animation: infinite_rotation 80s linear 2s infinite normal forwards;
+  animation: infinite_rotation 80s linear 1s infinite normal forwards;
 }
 
 @keyframes infinite_rotation {
@@ -557,10 +580,36 @@ div.fixed-navbar-position-home nav:last-child {
     box-shadow: 0px 0px 0px 0px #FFEA20;
   }
 }
+.greeting_cv_1 {
+  animation: greeting 0.3s ease-out -1s 1 normal forwards;
+}
+
+.greeting_cv_2 {
+  animation: greeting 0.3s ease-out 0s 1 normal forwards;
+}
+
+.greeting_cv_3 {
+  animation: greeting 0.3s ease-out 1s 1 normal forwards;
+}
+
+.greeting_cv_4 {
+  animation: greeting 0.3s ease-out 2s 1 normal forwards;
+}
+
+@keyframes greeting {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
 .meter-animation {
   stroke-dasharray: 357;
   stroke-dashoffset: 357;
-  animation: meter 2s ease-in-out 0.2s 1 normal forwards;
+  animation: meter 0.5s ease-out 0.2s 1 normal forwards;
 }
 
 @keyframes meter {
@@ -574,7 +623,7 @@ div.fixed-navbar-position-home nav:last-child {
 .meter-animation_2 {
   stroke-dasharray: 357;
   stroke-dashoffset: 357;
-  animation: meter_2 2s ease-in-out 0.5s 1 normal forwards;
+  animation: meter_2 0.5s ease-out 0.5s 1 normal forwards;
 }
 
 @keyframes meter_2 {
@@ -588,7 +637,7 @@ div.fixed-navbar-position-home nav:last-child {
 .meter-animation_3 {
   stroke-dasharray: 357;
   stroke-dashoffset: 357;
-  animation: meter_3 2s ease-in-out 0.75s 1 normal forwards;
+  animation: meter_3 0.5s ease-out 0.75s 1 normal forwards;
 }
 
 @keyframes meter_3 {
@@ -637,12 +686,12 @@ div.fixed-navbar-position-home nav:last-child {
     font-size: 34px;
   }
   #second_section_cv > div {
-    display: block;
-  }
-  #second_section_cv .introArea {
-    text-indent: 0%;
+    grid-template-columns: 1fr;
   }
   #second_section_cv .mark_shown_area {
     justify-content: center;
+  }
+  #second_section_cv .my_skills {
+    gap: 4rem;
   }
 }

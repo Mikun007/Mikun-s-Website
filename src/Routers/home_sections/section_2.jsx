@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 let timeStarted = "";
@@ -60,6 +60,11 @@ function Section_2() {
 
             count--;
             document.querySelector(".timer_in_text > p").innerHTML = count;
+            document.getElementById("navbar").addEventListener("click", () => {
+                clearInterval(intervalId);
+                count = 60;
+                timeStarted = "";
+            })
           
             if (count === 0) {
               clearInterval(intervalId); // stop the interval when count reaches -1
@@ -81,7 +86,7 @@ function Section_2() {
     // Typing speed test Functionality.
     let prev_val = [];
     let controlPressed = "";
-
+    // Typing function call when key is pressed.
     function changed(event) {
         let keyPressed;
         let word = document.querySelector(".words-to-write span:nth-child(1)").innerHTML;
@@ -139,6 +144,7 @@ function Section_2() {
                 prev_val = [];
                 controlPressed = "";
                 document.getElementById("contentEditableDiv").classList.remove("line_through");
+                document.getElementById("contentEditableDiv").innerHTML = "";
             }
 
             // Do this if the editable div has a class "line_through"

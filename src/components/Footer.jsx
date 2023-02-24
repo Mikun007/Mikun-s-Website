@@ -36,7 +36,7 @@ function Footer() {
             </div>
 
             {/* for sec of not getting unnesarry error */}
-            <div className="meters_div meter_1 meter_2 meter_3" style={{"display": "none"}}></div>
+            <div className="the_bar_for_sass cv_section_3 meter_1 meter_2 meter_3" style={{"display": "none"}}></div>
         </footer>
     )
 };

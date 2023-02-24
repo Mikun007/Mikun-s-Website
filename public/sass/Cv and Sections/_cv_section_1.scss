@@ -1,10 +1,11 @@
 #first_section_cv{
-    background-color: $main_theme;
-    padding: 6rem 2rem 6rem 2rem;
+    background-color: $Dark_light_8;
+    padding: 6rem 2rem 4rem 2rem;
     text-align: center;
     border-radius: 16px;
     & p {
         margin: 0;
+        opacity: 0;
 
         &:first-child, &:nth-child(2) {
             font-family: 'Montserrat';
@@ -24,4 +25,14 @@
             color: $Dark_light_3;
         };
     };
+}
+
+hr {
+    border: none;
+    border-top-style: dotted;
+    width: 60px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top-width: 10px;
 }

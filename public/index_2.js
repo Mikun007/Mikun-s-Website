@@ -1,12 +1,37 @@
 let function_added = "";
 
+function bar_animation() {
+  const sass_div = document.querySelector(".the_bar_for_sass");
+  const javascript_div =document.querySelector(".the_bar_for_javascript");
+  const python_div = document.querySelector(".the_bar_for_python");
+  const react_div = document.querySelector(".the_bar_for_react");
+  const next_div = document.querySelector(".the_bar_for_next");
+  const figma_div = document.querySelector(".the_bar_for_figma");
+  const ai_div = document.querySelector(".the_bar_for_ai")
+  let observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        setTimeout(() => {javascript_div.style.width = "55%";}, 200);
+        setTimeout(() => {python_div.style.width = "60%";}, 400);
+        setTimeout(() => {react_div.style.width = "50%";}, 600);
+        setTimeout(() => {sass_div.style.width = "45%";}, 800);
+        setTimeout(() => {next_div.style.width = "45%";}, 1100);
+        setTimeout(() => {figma_div.style.width = "60%";}, 1300);
+        setTimeout(() => {ai_div.style.width = "40%";}, 1500);
+        observer.unobserve(entry.target);
+      };
+    });
+  });
+  observer.observe(sass_div);
+};
+
 function call_meter_animation() {
     // Animation on MarkList of meter on cv page
     function score_animation(target, finalValue){
       const divElement = document.getElementById(target);
   
       let currentValue = 0;
-      const duration = 2000;
+      const duration = 1000;
       const intervalTime = duration / finalValue;
   
       const intervalId = setInterval(()=> {
@@ -19,7 +44,7 @@ function call_meter_animation() {
       }, intervalTime)
     };
   
-    const myDiv = document.querySelector(".meters_div");
+    const myDiv = document.querySelector(".cv_section_3");
     const my_meter = document.querySelector(".meter_1");
     const my_meter_2 = document.querySelector(".meter_2");
     const my_meter_3 = document.querySelector(".meter_3");
@@ -32,8 +57,8 @@ function call_meter_animation() {
           my_meter_3.classList.add("meter-animation_3");
           if (function_added === "") {
             setTimeout(() => {score_animation("10th_mark", 64)}, 200);
-            setTimeout(()=> {score_animation("12th_mark", 55)}, 500);
-            setTimeout(()=> {score_animation("collage_mark", 72)}, 750);
+            setTimeout(()=> {score_animation("12th_mark", 55)}, 400);
+            setTimeout(()=> {score_animation("collage_mark", 72)}, 600);
             function_added = "yes";
           }
           
@@ -56,6 +81,7 @@ window.addEventListener("load", () => {
   body.addEventListener("touchstart", (event) => {
     startY = event.touches[0].clientY;
     call_meter_animation();
+    bar_animation();
   });
 
   body.addEventListener("touchmove", (event) => {
@@ -74,7 +100,6 @@ window.addEventListener("load", () => {
 
     // to reset the functionn added for percent in touch screen
     document.getElementById("navbar").addEventListener("touchstart", () => {
-      console.log("Hii")
       function_added = ""
     })
 
@@ -109,6 +134,7 @@ window.addEventListener("load", () => {
     };
 
     call_meter_animation();
+    bar_animation();
 
   });
 

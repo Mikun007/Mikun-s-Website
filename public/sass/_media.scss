@@ -55,15 +55,15 @@
 
     #second_section_cv {
         & > div {
-            display: block;  
-        }
-
-        & .introArea {
-            text-indent: 0%;
+            grid-template-columns: 1fr; 
         }
 
         & .mark_shown_area {
             justify-content: center;
+        }
+
+        & .my_skills {
+            gap: 4rem;
         }
     }
 

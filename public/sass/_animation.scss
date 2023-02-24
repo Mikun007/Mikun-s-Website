@@ -31,9 +31,11 @@
     };
 };
 
+
+// Home page
 // Svg animation on profile picture
 .infinite_rotation {
-    animation: infinite_rotation 80s linear 2s infinite normal forwards;
+    animation: infinite_rotation 80s linear 1s infinite normal forwards;
 }
 
 @keyframes infinite_rotation {
@@ -104,13 +106,32 @@
 
 
 
-// Second Page
-// meter animation
+// Cv Page
+@for $i from 1 through 4 {
+    .greeting_cv_#{$i} {
+        animation: greeting 0.3s ease-out #{$i - 2}s 1 normal forwards;
+    }
 
+}
+
+@keyframes greeting {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+// meter animation
 .meter-animation{
     stroke-dasharray: 357;
     stroke-dashoffset: 357;
-    animation: meter 2s ease-in-out 0.2s 1 normal forwards;
+    animation: meter 0.5s ease-out 0.2s 1 normal forwards;
 }
 
 // frist meter (64%)
@@ -128,7 +149,7 @@
 .meter-animation_2{
     stroke-dasharray: 357;
     stroke-dashoffset: 357;
-    animation: meter_2 2s ease-in-out 0.5s 1 normal forwards;
+    animation: meter_2 0.5s ease-out 0.5s 1 normal forwards;
 }
 
 @keyframes meter_2 {
@@ -145,7 +166,7 @@
 .meter-animation_3{
     stroke-dasharray: 357;
     stroke-dashoffset: 357;
-    animation: meter_3 2s ease-in-out 0.75s 1 normal forwards;
+    animation: meter_3 0.5s ease-out 0.75s 1 normal forwards;
 }
 
 @keyframes meter_3 {
