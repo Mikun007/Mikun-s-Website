@@ -92,7 +92,6 @@ function Section_2() {
     function timer() {
         document.getElementById("timer_path").classList.add("timer_svg");
         const intervalId = setInterval(() => {
-            setCount(new_count--)
             if (document.querySelector(".t_should_run_check").innerHTML === "no") {
                 clearInterval(intervalId);
             }
@@ -116,7 +115,7 @@ function Section_2() {
                 document.getElementById("contentEditableDiv").contentEditable = "false";
               }
             }
-            
+            setCount(new_count--)
           }, 1000);
     };
 

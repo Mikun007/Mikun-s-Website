@@ -1,6 +1,11 @@
+import { ReactSVG } from "react-svg";
+import profilePic from "../../svg/profilepic.svg";
 function Cv_section_1() {
     return (
         <section id="first_section_cv">
+            <span style={{"margin": "5px"}}>
+                <ReactSVG src={profilePic} />
+            </span>
             <p className="greeting_cv_1">Hii,</p>
             <p className="greeting_cv_2">I am Budhadev Das</p>
             <p className="greeting_cv_3">91-9078754624, mikundas2000@gmail.com</p>
