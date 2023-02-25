@@ -1,11 +1,32 @@
 import { useEffect, useState } from "react";
 
 
-let timeStarted = "";
+var timeStarted = "";
+
+var controlPressed = "";
+var prev_val = [];
+var key_press = [];
+
+var new_count = 59;
+
 function Section_2() {
     const [wpm, setWpm] = useState(0);
-    
-    const myWords = [ "apple",  "banana",  "cherry",  "dog",  "elephant",  "frog", "house", "jacket",  "kite",  "lemon",  "monkey",  "nest",  "orange",  "pencil",  "queen",  "rabbit",  "sun",  "tree", "water", "book",  "car",  "desk",  "eleven",  "fish",  "guitar",  "hat",  "ice", "key",  "lion",  "map",  "nose",  "ocean",  "pizza",  "queen",  "robot",  "snake",  "tree", "window", "cat", "elephant",  "flower", "mountain", "spider",  "tiger",  "umbrella", "watermelon", "ant",  "bird", "deer",  "ear",  "flower",  "goat",  "horse",  "ice",  "jungle",  "kite",  "lion", "nose",  "owl",  "panda",  "queen",  "rain",  "sun",  "tree",  "under",  "violet",  "whale", "yellow",  "apple",  "butter",  "cookie", "egg", "honey", "jam", "lemon",  "milk",  "nut", "pear", "tea", "water", "yam", 'the', 'and', 'cat', 'dog', 'hat', 'car', 'red', 'blue', 'one', 'two',
+    const [wordList, setWordList] = useState([]);
+    const [count, setCount] = useState(60);
+    const [t_should_run, set_t_should_run] = useState("yes");
+
+    // shuffling the array that is inputed
+    function array_shuffle(myWords) {
+        for (let i = myWords.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [myWords[i], myWords[j]] = [myWords[j], myWords[i]];
+          }
+          return myWords;
+    }
+
+    // word reseting or rearanging
+    function reset_the_words() {
+        let list = [ "apple",  "banana",  "cherry",  "dog",  "elephant",  "frog", "house", "jacket",  "kite",  "lemon",  "monkey",  "nest",  "orange",  "pencil",  "queen",  "rabbit",  "sun",  "tree", "water", "book",  "car",  "desk",  "eleven",  "fish",  "guitar",  "hat",  "ice", "key",  "lion",  "map",  "nose",  "ocean",  "pizza",  "queen",  "robot",  "snake",  "tree", "window", "cat", "elephant",  "flower", "mountain", "spider",  "tiger",  "umbrella", "watermelon", "ant",  "bird", "deer",  "ear",  "flower",  "goat",  "horse",  "ice",  "jungle",  "kite",  "lion", "nose",  "owl",  "panda",  "queen",  "rain",  "sun",  "tree",  "under",  "violet",  "whale", "yellow",  "apple",  "butter",  "cookie", "egg", "honey", "jam", "lemon",  "milk",  "nut", "pear", "tea", "water", "yam", 'the', 'and', 'cat', 'dog', 'hat', 'car', 'red', 'blue', 'one', 'two',
     'sun', 'run', 'fun', 'jump', 'book', 'pen', 'paper', 'apple', 'orange', 'banana',
     'bed', 'bee', 'box', 'boy', 'bus', 'big', 'buy', 'bag', 'bad', 'bat',
     'can', 'cab', 'cap', 'car', 'cut', 'cow', 'cop', 'cry', 'cup', 'cur',
@@ -21,13 +42,18 @@ function Section_2() {
     'men', 'mom', 'man', 'map', 'mud', 'mug', 'met', 'mop', 'mow', 'may',
     'net', 'nod', 'nip', 'now', 'new', 'nut', 'nun', 'nix', 'nil', 'nor',
     'owl', 'own', 'oak', 'oil']
-  
-    function array_shuffle() {
-        for (let i = myWords.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [myWords[i], myWords[j]] = [myWords[j], myWords[i]];
-          }
+        document.getElementById("contentEditableDiv").innerHTML = "";
+        document.querySelector(".word_written").innerHTML = "";
+        let new_words = array_shuffle(list);
+        setWordList(new_words);
     }
+
+    // when first load the page it should call the reset_the_words funtion to rearange the words
+    useEffect(() => {
+        reset_the_words()
+    }, [])
+
+    // to hide timeing functionality
     function hideTimer(){
         const x = document.querySelector("#svg_timer");
         if (x.style.visibility === "hidden") {
@@ -39,53 +65,62 @@ function Section_2() {
         }
     }
 
+    // setting focus on the content editable when click on that area
     function setFocus() {
         const div = document.getElementById("contentEditableDiv");
         div.focus();
     };
 
-    //Refresh the page
+    //Refresh the typing speed test
     function handleClick() {
-        window.location.reload()
+        reset_the_words();
+        set_t_should_run("no");
+        setCount(60)
+        new_count = 60
+        timeStarted = "";
+        controlPressed = "";
+        prev_val = [];
+        key_press = [];
+        document.getElementById("contentEditableDiv").classList.remove("line_through");
+        document.getElementById("timer_path").classList.remove("timer_svg");
+        document.getElementById("wpm_speed").classList.remove("background_flash")
+        document.getElementById("contentEditableDiv").contentEditable = "true";
+        
     };
-
     
     // Timer
-    let key_press = []
-
-    let count = 60;
     function timer() {
         document.getElementById("timer_path").classList.add("timer_svg");
         const intervalId = setInterval(() => {
-
-            count--;
-            document.querySelector(".timer_in_text > p").innerHTML = count;
+            setCount(new_count--)
+            if (document.querySelector(".t_should_run_check").innerHTML === "no") {
+                clearInterval(intervalId);
+            }
             document.getElementById("navbar").addEventListener("click", () => {
                 clearInterval(intervalId);
-                count = 60;
-                timeStarted = "";
-            })
+                handleClick();
+            });
           
-            if (count === 0) {
-              clearInterval(intervalId); // stop the interval when count reaches -1
-              
+            if (new_count === 0) {
+              clearInterval(intervalId);
+              document.getElementById("contentEditableDiv").contentEditable = "false";
               let words_written = Math.round(key_press.length / 5);
               let wrong_words = document.querySelectorAll(".line_through");
               let new_wpm = words_written - wrong_words.length;
 
-              if (new_wpm < 0) {
-                //Do nothing
+              if (new_wpm < 1) {
+                setWpm(0)
+                document.getElementById("wpm_speed").classList.add("background_flash");
+              } else {
+                setWpm(new_wpm)
+                document.getElementById("contentEditableDiv").contentEditable = "false";
               }
-              setWpm(new_wpm)
-              document.getElementById("wpm_speed").classList.add("background_flash")
-              document.getElementById("contentEditableDiv").contentEditable = "false";
             }
+            
           }, 1000);
     };
 
     // Typing speed test Functionality.
-    let prev_val = [];
-    let controlPressed = "";
     // Typing function call when key is pressed.
     function changed(event) {
         let keyPressed;
@@ -106,25 +141,37 @@ function Section_2() {
             let wrong_word = "";
             let the_removed_word = document.querySelector(".words-to-write span:nth-child(1)")
             if (the_removed_word.innerHTML.length > 0) {
-                wrong_word = "yes"
+                wrong_word = "yes";
             }
 
-            the_removed_word.remove();
-            let the_word = document.getElementById("contentEditableDiv").innerHTML;
-            let to_add_to = document.querySelector(".word_written");
-            let newSpan = document.createElement("span");
-            newSpan.innerHTML = the_word;
-            newSpan.style.marginRight = "0.25rem";
-            if (document.getElementById("contentEditableDiv").classList.contains("line_through") || wrong_word === "yes") {
-                newSpan.classList.add("line_through");
-            }
-            newSpan.classList.add("written_word");
-            to_add_to.appendChild(newSpan)
+            if (document.getElementById("contentEditableDiv").innerHTML.length > 0) {
+                the_removed_word.remove();
+                let the_word = document.getElementById("contentEditableDiv").innerHTML;
+                let to_add_to = document.querySelector(".word_written");
+                let newSpan = document.createElement("span");
+                newSpan.innerHTML = the_word;
+                newSpan.style.marginRight = "0.25rem";
+                if (document.getElementById("contentEditableDiv").classList.contains("line_through") || wrong_word === "yes") {
+                    newSpan.classList.add("line_through");
+                }
+                newSpan.classList.add("written_word");
+                to_add_to.appendChild(newSpan)
 
-            document.getElementById("contentEditableDiv").innerHTML = null;
-            document.getElementById("contentEditableDiv").classList.remove("line_through");
-            prev_val = [];
-            controlPressed = "";
+                document.getElementById("contentEditableDiv").innerHTML = null;
+                document.getElementById("contentEditableDiv").classList.remove("line_through");
+                prev_val = [];
+                controlPressed = "";
+                
+                if (event.key === " ") {
+                    key_press.push("space")
+                };
+                if (event.key === "Shift") {
+                    key_press.push("shift")
+                };
+                if (event.key === "Backspace") {
+                    key_press.push("Back")
+                };
+            }
 
         }
 
@@ -135,6 +182,7 @@ function Section_2() {
                 let new_val = "";
                 prev_val.map((e) => {
                     new_val += e;
+                    return null;
                 })
 
                 let w = document.querySelector(".words-to-write span:nth-child(1)").innerHTML;
@@ -191,39 +239,31 @@ function Section_2() {
               event.key === "ArrowUp" ||
                event.key === "ArrowDown"
                ) {
-                if (event.key === " ") {
-                    key_press.push("space")
-                };
-                if (event.key === "Shift") {
-                    key_press.push("shift")
-                };
-                if (event.key === "Backspace") {
-                    key_press.push("Back")
-                };
             
         } else {
             if (timeStarted === ""){
                 timeStarted = "yes";
+                set_t_should_run("yes")
                 timer();
             };
-            keyPressed = event.key; 
-            if (keyPressed === word[0]) {
+            keyPressed = event.key;
+            if (document.getElementById("contentEditableDiv").contentEditable === "false") {
+            
+            }else if (keyPressed === word[0]) {
                 prev_val.push(word[0]);
-                key_press.push(event.key)
+                key_press.push(word[0])
                 let new_char = word.slice(1);
                 document.querySelector(".words-to-write span").innerHTML = new_char;
             }else {
                 document.getElementById("contentEditableDiv").classList.add("line_through");
-                
             };
         };
     };
 
-
     return (
 
         <section id="second_section_home">
-            <h1>Typing Speed Test 😎</h1>
+            <h1>Typing Speed Test 😎 <p className="t_should_run_check" style={{"display": "none"}}>{t_should_run}</p></h1>
             <div className="timer_area">
                 <span id="svg_timer">
                     <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -238,7 +278,7 @@ function Section_2() {
                     </svg>
 
                     <div className="timer_in_text">
-                        <p>60</p>
+                        <p>{count}</p>
                         <p>seconds</p>
                     </div>
                 </span>
@@ -250,7 +290,6 @@ function Section_2() {
                     </span>
                 </span>
             </div>
-            {array_shuffle()}
 
             <div onClick={setFocus} className="typing_area">
                 <div className="word_written"></div>
@@ -259,7 +298,7 @@ function Section_2() {
                 }} 
                 id="contentEditableDiv" contentEditable={true} spellCheck={false} tabIndex={1}></div>
                 <div className="words-to-write">
-                    {myWords.map((word, index) => {
+                    {wordList.map((word, index) => {
                         return <span key={index} style={{marginRight: "0.65rem"}}>{word}</span>
                     })}
                 </div>
