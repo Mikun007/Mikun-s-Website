@@ -71,6 +71,7 @@ function call_meter_animation() {
   }
 
 window.addEventListener("load", () => {
+
   // navBar Animation while scrolling.
   const body = document.querySelector("html");
 

@@ -1,17 +1,17 @@
 import { ReactSVG } from "react-svg";
-import figma from "../../../svg/figma.svg";
-import javascript from "../../../svg/javascript.svg";
-import python from "../../../svg/python.svg";
-import react from "../../../svg/react.svg";
-import next from "../../../svg/next.svg";
-import sass from "../../../svg/sass.svg";
+import Figma from "../../../svg/figma.svg";
+import Javascript from "../../../svg/javascript.svg";
+import Python from "../../../svg/python.svg";
+import React from "../../../svg/react.svg";
+import Next from "../../../svg/next.svg";
+import Sass from "../../../svg/sass.svg";
 import Ai from "../../../svg/Ai.svg";
 
 function Sec_3_cv_sec_2() {
     return(
         <div className="my_skills">
             <div>
-                <ReactSVG src={javascript}/>
+                <ReactSVG src={Javascript}/>
                 <div>
                     <div className="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                         <div className="the_bar_for_javascript progress-bar progress-bar-striped progress-bar-animated" style={{"width": "0%", "backgroundColor": "#F0DB4F"}}></div>
@@ -19,7 +19,7 @@ function Sec_3_cv_sec_2() {
                 </div>
             </div>
             <div>
-                <ReactSVG src={python}/>
+                <ReactSVG src={Python}/>
                 <div>
                     <div className="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                         <div className="the_bar_for_python progress-bar progress-bar-striped progress-bar-animated" style={{"width": "0%", "backgroundColor": "#387EB8"}}></div>
@@ -27,7 +27,7 @@ function Sec_3_cv_sec_2() {
                 </div>
             </div>
             <div>
-                <ReactSVG src={react}/>
+                <ReactSVG src={React}/>
                 <div>
                     <div className="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                         <div className="the_bar_for_react progress-bar progress-bar-striped progress-bar-animated" style={{"width": "0%", "backgroundColor": "#00D8FF"}}></div>
@@ -35,7 +35,7 @@ function Sec_3_cv_sec_2() {
                 </div>
             </div>
             <div>
-                <ReactSVG src={sass}/>
+                <ReactSVG src={Sass}/>
                 <div>
                     <div className="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                         <div className="the_bar_for_sass progress-bar progress-bar-striped progress-bar-animated" style={{"width": "0%", "backgroundColor": "#CD6799"}}></div>
@@ -43,7 +43,7 @@ function Sec_3_cv_sec_2() {
                 </div>
             </div>
             <div>
-                <ReactSVG src={next}/>
+                <ReactSVG src={Next}/>
                 <div>
                     <div className="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                         <div className="the_bar_for_next progress-bar progress-bar-striped progress-bar-animated" style={{"width": "0%", "backgroundColor": "black"}}></div>
@@ -51,7 +51,7 @@ function Sec_3_cv_sec_2() {
                 </div>
             </div>
             <div>
-                <ReactSVG src={figma}/>
+                <ReactSVG src={Figma}/>
                 <div>
                     <div className="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                         <div className="the_bar_for_figma progress-bar progress-bar-striped progress-bar-animated" style={{"width": "0%", "backgroundColor": "#A259FF"}}></div>

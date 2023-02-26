@@ -9,3 +9,14 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+.path {
+    display: inline-block;
+    position: absolute;
+    top: 40rem;
+}
+
+path.path_svg {
+    stroke-dasharray: 4821;
+    stroke-dashoffset: 4821;
+}

@@ -1,7 +1,5 @@
 import Meter from "../../../components/meter";
 
-
-
 function Sec_2_cv_sec_2() {
 
     return(

@@ -324,6 +324,17 @@ hr {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.path {
+  display: inline-block;
+  position: absolute;
+  top: 40rem;
+}
+
+path.path_svg {
+  stroke-dasharray: 4821;
+  stroke-dashoffset: 4821;
+}
+
 #second_section_cv .introArea {
   grid-column: 2/span 2;
   text-align: justify;
@@ -407,6 +418,27 @@ hr {
 }
 #second_section_cv .project_link a:hover {
   color: #736E84;
+}
+
+#grid_container_about {
+  background-color: #F9F9F9;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+#grid_container_about > * {
+  text-align: justify;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #443E5B;
+}
+#grid_container_about p {
+  margin-bottom: 2rem;
+}
+#grid_container_about div:nth-child(2) {
+  grid-column: span 3;
 }
 
 footer {
@@ -708,5 +740,8 @@ div.fixed-navbar-position-home nav:last-child {
   }
   #second_section_cv .my_skills {
     gap: 4rem;
+  }
+  .path {
+    visibility: hidden;
   }
 }

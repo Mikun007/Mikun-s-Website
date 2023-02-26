@@ -14,7 +14,7 @@ function Section_1() {
                     </div>
                     <div>
                         <button onClick={() => {
-                            window.location.href = "mailto:mikundas2000@gmail.com";
+                            window.location.href = "mailto:mikundas27@gmail.com";
                         }}><b>Hire_Me</b></button>
                         <a href="#">Projects  <i className="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>

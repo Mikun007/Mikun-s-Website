@@ -10,6 +10,9 @@ function Nav() {
     }, [location])
 
     function isActive(path) {
+        if (currentLocation === "/cv") {
+            
+        }
         return path === currentLocation ? "active" : "";
     };
     return (

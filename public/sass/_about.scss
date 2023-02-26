@@ -1,0 +1,25 @@
+#grid_container_about {
+   background-color: $Dark_light_8;
+   padding: 2rem;
+   border-radius: 1rem;
+
+    & > * {
+        text-align: justify;
+
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 25px;
+
+        color: $Dark_light_3;
+    }
+
+    & p {
+        margin-bottom: 2rem;
+    }
+
+    & div:nth-child(2) {
+        grid-column: span 3;
+    }
+}
