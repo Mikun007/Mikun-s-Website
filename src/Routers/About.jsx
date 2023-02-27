@@ -1,4 +1,36 @@
+import { useState } from "react";
+
 function About() {
+    const [formValues, setFormValues] = useState({
+        uName: "",
+        problem: ""
+    });
+
+    const [sending, setSending] = useState(false);
+    const [disabled, setDisabled] = useState(false);
+
+    function handleChange(event) {
+        const { name, value } = event.target;
+        setFormValues((preVal) => {
+            return {
+                ...preVal,
+                [name] : value,
+            };
+        });
+    };
+
+    function handleClick(event) {
+        event.preventDefault()
+        setDisabled(true)
+        setSending(true)
+        setTimeout( () => {
+            console.log(formValues)
+            setSending(false)
+            setDisabled(false)
+        }, 3000)
+    };
+
+
     return (
         <div id="grid_container_about">
             <div>
@@ -6,7 +38,7 @@ function About() {
                 <p><b className="h2">W</b>elcome to my personal website! My name is Budhadev Das, You can call me Mikun, and I am really thankfull that you have taken the time to visit my webiste.</p>
                 <p>I created this website as a platform to showcase my work and share my passions with the world. I have done..</p>
                 <div className="table-responsive" style={{"textAlign": "center"}}>
-                    <table className="table table-hover table-sm">
+                    <table className="table table-hover table-bordered table-sm">
                         <thead>
                             <tr>
                                 <th scope="col">Collage/School</th>
@@ -35,7 +67,7 @@ function About() {
                 </div>
 
                 <p><b className="h2">A</b>side from my professional pursuits, I am also deeply passionate about Development, Design and Arts.
-                     I also like Bike riding but for limited resorsorce I can't get any hands on that 🙂 and I am still looking for my new interest.</p>
+                     I also like Bike riding and I am still looking for my new interest.</p>
                 <p>One of the reasons I created this website is to show my skills and I always wanted my own website.</p>
                 <p>Thank you for visiting my website, and please don't hesitate to reach out if you have any questions or simply want to say hello. I look forward to connecting with you!</p>
 
@@ -59,33 +91,38 @@ function About() {
                     <div>
                         <label className="form-label" htmlFor="">Your Name:</label><br />
                         <input 
+                        onChange={handleChange}
                         className="form-control"
                         type="text" 
-                        name="Name" required
+                        name="uName"
+                        value={formValues.uName}
+                        required
                         /><br />
                     </div>
                     
                     <div>
                         <label className="form-label" htmlFor="">Problem:</label><br />
-                        <textarea 
+                        <textarea
+                        onChange={handleChange}
                         className="form-control"
-                        name="Problem"
+                        name="problem"
                         cols="20"
-                        rows="3" required
+                        rows="3"
+                        value={formValues.problem}
+                        required
                         ></textarea><br />
                     </div>
                     
-                    <button onClick={(e) => {
-                        e.preventDefault()
-                        console.log(e)
-                    }}
+                    <button onClick={handleClick}
                     className= "btn btn-warning"
-                    type="submit">Submit</button>
+                    type="submit"
+                    disabled={disabled}
+                    >{sending ? <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>: "Submit"}</button>
                 </form>
 
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default About;

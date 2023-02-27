@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ReactSVG } from "react-svg";
 import profile from "../../svg/profile.svg";
 import profilePic from "../../svg/profilepic.svg";
@@ -16,7 +17,7 @@ function Section_1() {
                         <button onClick={() => {
                             window.location.href = "mailto:mikundas27@gmail.com";
                         }}><b>Hire_Me</b></button>
-                        <a href="#">Projects  <i className="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <Link to="/project">Projects  <i className="fa-solid fa-arrow-up-right-from-square"></i></Link>
                     </div>
                 </div>
 
