@@ -8,9 +8,9 @@ function Cv_section_1() {
             </span>
             <p className="greeting_cv_1">Hii,</p>
             <p className="greeting_cv_2">I am Budhadev Das</p>
-            <p className="greeting_cv_3">91-9078754624, mikundas27@gmail.com</p>
+            <p className="greeting_cv_3">mikundas27@gmail.com</p>
             <p className="greeting_cv_3">
-                Rayagada, Odisha, 765019 <br />
+                Rayagada, Odisha <br />
             </p>
             <button className="greeting_cv_4 btn btn-outline-warning" style={{"margin": "20px", "opacity": "0"}}>Download</button>
         </section>

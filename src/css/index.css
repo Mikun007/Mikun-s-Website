@@ -90,7 +90,7 @@ body {
 #second_section_home {
   margin: 3rem 0rem;
   padding: 3rem 0rem;
-  background-image: url("../../Frame_48.svg");
+  background-image: url("../svg/Frame48.svg");
   background-size: 100%;
 }
 #second_section_home h1 {
@@ -466,6 +466,51 @@ path.path_svg {
 }
 #project_page a.small {
   grid-row: span 1;
+}
+
+.details {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #3E3950;
+  background-color: #E8E7EA;
+  padding: 32px;
+  border-radius: 1rem;
+}
+
+.examine-img {
+  background-image: url(../svg/examine.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.wire-frame {
+  background-image: url(../svg/WireFrame.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pages-img {
+  background-image: url(../svg/pages.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 footer {

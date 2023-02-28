@@ -38,9 +38,10 @@ function Project() {
             {status === "success" && (
                 <div id="project_page">
                     {data.map(project => 
-                    <Link 
+                    <Link
                     key={project.id} 
                     className={project.class_name}
+                    to={"/project/detail/" + project.id}
                     style={
                         {
                             "backgroundImage": `url(${project.image})`,
@@ -55,7 +56,6 @@ function Project() {
                         <div>
                             <h4>{project.header}</h4>
                             <p>{project.intro}</p>
-                            {/* <div dangerouslySetInnerHTML={{__html: project.intro}}></div> */}
                         </div>
                     </Link>)}
                 </div>

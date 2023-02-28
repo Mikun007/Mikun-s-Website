@@ -9,6 +9,8 @@ import Cv from "./Routers/Cv";
 import About from "./Routers/About";
 
 import Project from "./Routers/Project";
+import ProjectE from "./Routers/ProjectE";
+import NotFound from "./NotFound";
 
 const queryClient = new QueryClient();
 
@@ -22,11 +24,11 @@ function App() {
                     <Route path="/cv" element={<Cv />}/>
                     <Route path="/about" element={<About />}/>
                     <Route path="/project" element={<Project />} />
+                    <Route path="/project/detail/:id" element={<ProjectE />}/>
+                    <Route path="*" element={<NotFound />}/>
                 </Routes>
+                <Footer />
             </Router>
-
-            
-            <Footer />
         </QueryClientProvider>
         
     );

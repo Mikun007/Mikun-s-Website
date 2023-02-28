@@ -23,11 +23,24 @@ function About() {
         event.preventDefault()
         setDisabled(true)
         setSending(true)
-        setTimeout( () => {
-            console.log(formValues)
+        fetch("/bug", {
+            method: "POST",
+            headers: { "content-Type": "application/json"},
+            body: JSON.stringify(formValues)
+        }).then((res) => {
+            if (!res.ok) {
+                throw Error("Something went wrong...")
+            }
             setSending(false)
             setDisabled(false)
-        }, 3000)
+            setFormValues((preval) => {
+                return {
+                    ...preval,
+                uName : "",
+                problem : ""
+                }
+            })
+        })
     };
 
 
@@ -35,7 +48,7 @@ function About() {
         <div id="grid_container_about">
             <div>
 
-                <p><b className="h2">W</b>elcome to my personal website! My name is Budhadev Das, You can call me Mikun, and I am really thankfull that you have taken the time to visit my webiste.</p>
+                <p>Welcome to my personal website! My name is Budhadev Das, You can call me Mikun, and I am really thankfull that you have taken the time to visit my webiste.</p>
                 <p>I created this website as a platform to showcase my work and share my passions with the world. I have done..</p>
                 <div className="table-responsive" style={{"textAlign": "center"}}>
                     <table className="table table-hover table-bordered table-sm">

@@ -1,0 +1,44 @@
+.details {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+
+    color: $Dark_light_2;
+    background-color: $Dark_light_7;
+    padding: 32px;
+    border-radius: 1rem;
+}
+
+.examine-img {
+    background-image: url(../svg/examine.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 300px;
+    height: 200px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%)
+};
+.wire-frame {
+    background-image: url(../svg/WireFrame.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 300px;
+    height: 200px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%)
+};
+.pages-img {
+    background-image: url(../svg/pages.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 300px;
+    height: 200px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%)
+};
+
