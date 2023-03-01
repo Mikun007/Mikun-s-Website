@@ -10,15 +10,15 @@ function Footer() {
                     <p>contact Details :</p>
                     <div>
                         <i className="icon-col fa-brands fa-linkedin fa-2x"></i>
-                        <a href="#"><p>My Linked-lin Handle</p></a>
+                        <a href="https://www.linkedin.com/in/budhadev-das-002689199" target="_blank" rel="noreferrer"><p>My Linked-lin Handle (recomended)</p></a>
                     </div>
                     <div>
                         <i className="icon-col fa-brands fa-instagram fa-2x"></i>
-                        <a href="#"><p>My Instagram Handle</p></a>
+                        <a href="https://www.instagram.com/mikun___das__007/" target="_blank" rel="noreferrer"><p>My Instagram Handle</p></a>
                     </div>
                     <div>
                         <i className="icon-col fa-brands fa-twitter fa-2x"></i>
-                        <a href="#"><p>My Twitter Handle</p></a>
+                        <a href="https://twitter.com/mikun_das" target="_blank" rel="noreferrer"><p>My Twitter Handle</p></a>
                     </div>
 
                 </div>

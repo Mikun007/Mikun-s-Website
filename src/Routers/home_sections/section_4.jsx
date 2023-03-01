@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 function Section_4() {
     return(
         <section id="fourth_section_home">
             <div>
-                <a href="#">Favorite Movies</a>
+                <Link to="/movies">Favorite Movies</Link>
             </div>
             <div>
-                <a href="#">Favorite Games</a>
+                <Link to="/games">Favorite Games</Link>
             </div>
         </section>
     )

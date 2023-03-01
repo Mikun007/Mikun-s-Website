@@ -4,10 +4,16 @@ import Section_1 from "./home_sections/section_1";
 import Section_2 from "./home_sections/section_2";
 import Section_3 from "./home_sections/section_3";
 import Section_4 from "./home_sections/section_4";
+import { motion } from "framer-motion";
 
 function Home() {
     return (
-        <div>
+        <motion.div
+        
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+        >
 
             <div>
                 <main className="grid-container-home">
@@ -24,7 +30,7 @@ function Home() {
                 </main>
             </div>
 
-        </div>
+        </motion.div>
     );
 };
 

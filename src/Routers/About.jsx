@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 function About() {
     const [formValues, setFormValues] = useState({
@@ -45,7 +46,12 @@ function About() {
 
 
     return (
-        <div id="grid_container_about">
+        <motion.div
+        id="grid_container_about"
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+        >
             <div>
 
                 <p>Welcome to my personal website! My name is Budhadev Das, You can call me Mikun, and I am really thankfull that you have taken the time to visit my webiste.</p>
@@ -134,7 +140,7 @@ function About() {
                 </form>
 
             </div>
-        </div>
+        </motion.div>
     );
 };
 

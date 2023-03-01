@@ -16,8 +16,27 @@ function ProjectE() {
 
     return (
         <div>
-            {status === "loading" && "LOding..." }
-            {status === "error" && "Error.."}
+            {status === "loading" && (
+                <div>
+                    <div className="d-flex justify-content-center">
+                        <div className="spinner-grow text-warning" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                        <div className="spinner-grow text-warning" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                    <div className="d-flex justify-content-center">
+                        <div className="spinner-grow text-warning" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                        <div className="spinner-grow text-warning" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            )}
+            {status === "error" && (<div style={{"color": "red"}}>Error fetching data</div>)}
             {status === "success" && (<div dangerouslySetInnerHTML={{__html: data.main}}></div>)}
         </div>
     )

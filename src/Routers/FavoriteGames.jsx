@@ -1,16 +1,13 @@
-import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 import { motion } from "framer-motion";
 
-// function to fetch the datas
-const getProject = async () => {
-    const res = await fetch("/projects");
+async function getGames() {
+    const res = await fetch("/games");
     return res.json();
-};
+}
 
-function Project() {
-    const {data, status} = useQuery("Projects", getProject);
-
+function FavoriteGames() {
+    const {data, status} = useQuery("movies", getGames)
     return (
         <motion.div
         initial={{opacity: 0}}
@@ -40,33 +37,32 @@ function Project() {
             {status === "error" && (
                 <div style={{"color": "red"}}>Error fetching data</div>
             )}
+            <div className="MG">
+            
             {status === "success" && (
-                <div id="project_page">
-                    {data.map(project => 
-                    <Link
-                    key={project.id} 
-                    className={project.class_name}
-                    to={"/project/detail/" + project.id}
-                    style={
-                        {
-                            "backgroundImage": `url(${project.image})`,
-                            "backgroundRepeat": "no-repeat",
-                            "backgroundSize": "cover",
-                            "backgroundPosition": "center",
-                            "backgroundColor": "gray",
-                            "backgroundBlendMode": "multiply",
-                        }
-                    }
-                    >
-                        <div>
-                            <h4>{project.header}</h4>
-                            <p>{project.intro}</p>
+                data.map(movie => {
+                    return (
+                        <div className="card" key={movie.id}>
+                            <div className="front" style={{"backgroundImage": `url(${movie.image})`}}>
+                                <h2 style={{"color": "white"}}>{movie.name}</h2>
+                            </div>
+                            <div className="back" style={{"flexDirection": "column"}}>
+                                <div style={{"display": "flex", "flexDirection": "column"}}>
+                                    <span>⭐</span> <p>{movie.rating}</p>
+                                </div>
+                                <div>
+                                    <p>{movie.description}</p>
+                                </div>
+                            </div>
                         </div>
-                    </Link>)}
-                </div>
+                    )
+                })
             )}
+        </div>
+        <p style={{"textAlign": "center", "margin-top": "3rem"}}>"There is lot of Games out there that i havn't played but
+        these are my top picks right now. I will keep adding as i find anything interesting when i play any new game."</p>
         </motion.div>
     );
 };
 
-export default Project;
+export default FavoriteGames;

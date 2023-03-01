@@ -78,4 +78,10 @@
 
     }
 
+    .MG {
+        grid-template-columns: 1fr 1fr;
+        padding: 0;
+        grid-auto-rows: minmax(150px, auto);
+    }
+
 }
