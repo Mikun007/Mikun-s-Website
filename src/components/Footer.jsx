@@ -18,7 +18,7 @@ function Footer() {
                     </div>
                     <div>
                         <i className="icon-col fa-brands fa-twitter fa-2x"></i>
-                        <a href="https://twitter.com/mikun_das" target="_blank" rel="noreferrer"><p>My Twitter Handle</p></a>
+                        <a href="https://twitter.com/" target="_blank" rel="noreferrer"><p>My Twitter Handle</p></a>
                     </div>
 
                 </div>
