@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.aa62fda9.css",
+    "main.js": "/static/js/main.50e52e8b.js",
+    "static/media/profilepic.svg": "/static/media/profilepic.a53371e137149069d69ad1f2a82a6b88.svg",
+    "static/media/pages.png": "/static/media/pages.879a643c0a9dded66df7.png",
+    "static/media/examine.png": "/static/media/examine.3c38a67d20d9722c05ff.png",
+    "static/media/WireFrame.png": "/static/media/WireFrame.65f35dc55fe19944d84a.png",
+    "static/media/profile.svg": "/static/media/profile.fa01b3aa5d566d8afcc12db45f459474.svg",
+    "static/media/Frame48.svg": "/static/media/Frame48.0e914e012c411c36a8b5.svg",
+    "static/media/sass.svg": "/static/media/sass.d61178b42561b3cccd1dad848106d1e7.svg",
+    "static/media/react.svg": "/static/media/react.c879184b6ca69c4520159c6e11569ba6.svg",
+    "static/media/python.svg": "/static/media/python.e055012e6d61b89ad7d64bf8a7781734.svg",
+    "static/media/next.svg": "/static/media/next.38e837ff7f223140b0423824348413ea.svg",
+    "static/media/Ai.svg": "/static/media/Ai.ed17ddf7e91b526d8c36be2f3b8f9b77.svg",
+    "static/media/figma.svg": "/static/media/figma.c8854a5f5a2c8c47e1b9151465e8681c.svg",
+    "static/media/javascript.svg": "/static/media/javascript.19b535fb0fce536e6c7caa2432a0ab8a.svg",
+    "index.html": "/index.html",
+    "static/media/curv.svg": "/static/media/curv.6e4e1d3dc2370ec31429a4bd008c724a.svg",
+    "static/media/path.svg": "/static/media/path.53f204230f7fa0fdf22e1b2ad4ea855a.svg",
+    "main.aa62fda9.css.map": "/static/css/main.aa62fda9.css.map",
+    "main.50e52e8b.js.map": "/static/js/main.50e52e8b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa62fda9.css",
+    "static/js/main.50e52e8b.js"
+  ]
+}

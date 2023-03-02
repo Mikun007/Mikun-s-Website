@@ -19,6 +19,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "copy-static": "xcopy backend\\static build\\static /s /e",
+    "postbuild": "npm run copy-static",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

@@ -1,9 +1,10 @@
 from flask import Flask, jsonify, request
+from flask.helpers import send_from_directory
 from flask_cors import CORS, cross_origin
 from smtplib import SMTP
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="../build", static_url_path="")
 CORS(app)
 
 EMAIL = os.environ["email"]
@@ -14,7 +15,7 @@ projects_1 = [
         "id": 1,
         "header": "My Website",
         "class_name": "big",
-        "image_path": "static/images/image2.png",
+        "image_path": "static/images/image_2.png",
         "intro": "Making website can be really fascinating and exciting",
         "main": "<div class='details'> "
                 "<div>"
@@ -60,7 +61,7 @@ projects_1 = [
         "id": 2,
         "header": "Dummy",
         "class_name": "small",
-        "image_path": "static/images/image1.png",
+        "image_path": "static/images/image_1.png",
         "intro": "This is a dummy part will not show anything",
         "main": "<h1>None</h1>"
     },
@@ -68,7 +69,7 @@ projects_1 = [
         "id": 3,
         "header": "Dummy",
         "class_name": "big",
-        "image_path": "static/images/image1.png",
+        "image_path": "static/images/image_1.png",
         "intro": "This is a dummy part will not show anything",
         "main": "<h1>None</h1>"
     }
@@ -282,6 +283,12 @@ def movies():
 @cross_origin()
 def games():
     return games_
+
+
+@app.route("/")
+@cross_origin()
+def serve():
+    return send_from_directory(app.static_folder, "index.html")
 
 
 if __name__ == "__main__":

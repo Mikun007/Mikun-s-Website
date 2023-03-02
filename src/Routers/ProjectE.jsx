@@ -12,8 +12,6 @@ function ProjectE() {
 
     const {data, status} = useQuery("details", getDetails);
 
-    console.log(data)
-
     return (
         <div>
             {status === "loading" && (
