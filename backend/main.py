@@ -1,7 +1,9 @@
 from flask import Flask, jsonify, request
 from flask.helpers import send_from_directory
 from flask_cors import CORS, cross_origin
-from smtplib import SMTP
+from smtplib import SMTP_SSL
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 import os
 
 app = Flask(__name__, static_folder="../build", static_url_path="")
@@ -260,17 +262,16 @@ def details(id_):
 def bug():
     if request.method == "POST":
         the_bug = request.get_json()
-        with SMTP("smtp.gmail.com") as connection:
-            connection.starttls()
-            connection.login(
-                user=EMAIL,
-                password=PASSWORD
-            )
-            connection.sendmail(
-                from_addr=EMAIL,
-                to_addrs=EMAIL,
-                msg=f"subject: Bug Report \n\n {the_bug['uName']}\n\n{the_bug['problem']}"
-            )
+        message = MIMEMultipart()
+        message["From"] = EMAIL
+        message["To"] = EMAIL
+        message["subject"] = "Bug Report"
+
+        body = f"{the_bug['uName']}\n\n{the_bug['problem']}"
+        message.attach(MIMEText(body, 'plain'))
+        with SMTP_SSL("smtp.gmail.com", 465) as connection:
+            connection.login(EMAIL, PASSWORD)
+            connection.sendmail(EMAIL, EMAIL, message.as_string())
     return ["None", "None"]
 
 
