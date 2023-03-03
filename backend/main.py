@@ -14,7 +14,7 @@ PASSWORD = os.environ["password"]  # Remember Your App Password in Email
 
 projects_1 = [
     {
-        "id": 1,
+        "id": 0,
         "header": "My Website",
         "class_name": "big",
         "image_path": "static/images/image_2.png",
@@ -48,7 +48,7 @@ projects_1 = [
                 "<span class='h4'>Typing Speed Test:-</span>"
                 "<p style='text-align: justify'>I haven't thought of this before but this was the most "
                 "challenging part of this website took me around 2 days to complete it. You can see my code "
-                "<a href='https://github.com/Mikun007/Mikun-s-Website.git'>here</a>. The design inspiration of this "
+                "<a href='https://github.com/Mikun007/Mikun-s-Website.git' target='__blank'>here</a>. The design inspiration of this "
                 "came from a site called <b>liveChat.com</b>. It"
                 "was minimalistic straight to the point. So that's why i choose that design pattern. The wavy in the "
                 "home page design also came from that site.</p>"
@@ -61,7 +61,7 @@ projects_1 = [
                 "</div>"
     },
     {
-        "id": 2,
+        "id": 1,
         "header": "Dummy",
         "class_name": "small",
         "image_path": "static/images/image_1.png",
@@ -69,7 +69,7 @@ projects_1 = [
         "main": "<h1>None</h1>"
     },
     {
-        "id": 3,
+        "id": 2,
         "header": "Dummy",
         "class_name": "big",
         "image_path": "static/images/image_1.png",
@@ -252,9 +252,7 @@ def projects():
 @cross_origin()
 def details(id_):
     id__ = int(id_)
-    for p in projects_1:
-        if id__ == p["id"]:
-            return p
+    return projects_1[id__]
 
 
 @app.route("/bug", methods=["POST"])
