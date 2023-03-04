@@ -10,7 +10,7 @@ function ProjectE() {
         return res.json();
     }
 
-    const {data, status} = useQuery("details", getDetails);
+    const {data, status} = useQuery("details", getDetails, { cacheTime: 0});
 
     return (
         <div>
