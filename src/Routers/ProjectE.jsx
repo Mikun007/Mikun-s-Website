@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-
+import InnerHTML from 'dangerously-set-html-content';
 
 function ProjectE() {
     const { id } = useParams();
@@ -35,7 +35,7 @@ function ProjectE() {
                 </div>
             )}
             {status === "error" && (<div style={{"color": "red"}}>Error fetching data</div>)}
-            {status === "success" && (<div dangerouslySetInnerHTML={{__html: data.main}}></div>)}
+            {status === "success" && (<InnerHTML html={data.main} />)}
         </div>
     )
 };

@@ -62,11 +62,54 @@ projects_1 = [
     },
     {
         "id": 1,
-        "header": "Dummy",
+        "header": "To-do-list",
         "class_name": "small",
-        "image_path": "static/images/image_1.png",
-        "intro": "This is a dummy part will not show anything",
-        "main": "<h1>None</h1>"
+        "image_path": "static/images/to-do-list.png",
+        "intro": "See my To-do-list may not look good 🥲. but I asure you the functionality.",
+        "main": '<div class="details" style="padding: 100px; background-color: #ffeb3b;">'
+                '<h1 class="display-4" style="text-align: center;">To-do-list</h1>'
+                '<div class="input-group mb-3">'
+                '<input id="new_list_todo" type="text" class="form-control" style="text-align: center;" '
+                'autocomplete="off">'
+                '<button type="submit" onclick="add_new_item()" class="btn btn-dark">Add</button>'
+                '</div>'
+                '<div>'
+                '<ul class="ul list-group">'
+                '</ul>'
+                '</div>'
+                '</div>'
+                '<script>'
+                'var list = ["None", "None"];'
+                'var ul = document.querySelector(".ul");'
+                'var the_inp = document.getElementById("new_list_todo");'
+                'the_inp.focus();'
+                'function add_new_item() {'
+                'list.push(the_inp.value);the_inp.value = "";'
+                'ul.innerHTML = "";'
+                'items_list()'
+                '}'
+                'function items_list() {'
+                'for (var i = 0; i < list.length; i++) {'
+                'var listItem = document.createElement("li");'
+                'var listText = document.createTextNode(list[i]);'
+                'listItem.classList.add("list-group-item");'
+                'listItem.style.display = "flex";'
+                'listItem.style.justifyContent = "space-between";'
+                'listItem.style.alignItems = "center";'
+                'listItem.appendChild(listText);'
+                'var button = document.createElement("button");'
+                'button.classList.add("btn");'
+                'button.classList.add("btn-outline-danger");'
+                'var buttonText = document.createTextNode("X");'
+                'button.appendChild(buttonText);'
+                'button.addEventListener("click", function() {'
+                'var item = this.parentNode;'
+                'var itemIndex = Array.from('
+                'this.parentNode.parentNode.children).indexOf(this.parentNode);'
+                'item.remove();'
+                'list.splice(itemIndex, 1)});'
+                'listItem.appendChild(button);'
+                'ul.appendChild(listItem);};};items_list();</script>'
     },
     {
         "id": 2,
