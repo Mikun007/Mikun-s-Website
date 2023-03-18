@@ -4,6 +4,7 @@ import App from './App';
 import "./index_2.js";
 import "./index_3.js";
 import "./css/index.css";
+import "./css/styles.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

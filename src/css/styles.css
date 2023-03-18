@@ -1,0 +1,39 @@
+[class$="-detail"]{
+    display: none;
+}
+
+.faq-heading {
+    cursor: pointer;
+}
+
+.ani-detail {
+    animation: detail-ani 0.2s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes detail-ani {
+    0% {
+        height: 0;
+    }
+
+    50% {
+        height: 60px;
+    }
+
+    100% {
+        height: auto;
+    }
+}
+
+.sideNav-faq-ani {
+    animation: side-nav-faq 0.2s linear 0s 1 normal forwards;
+}
+
+@keyframes side-nav-faq {
+    from {
+        left: -50px;
+    }
+    
+    to {
+        left: 0px;
+    }
+}

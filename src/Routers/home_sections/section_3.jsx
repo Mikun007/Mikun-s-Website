@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Section_3() {
     return(
         <section id="third_section_home">
-            <Link to="/project/detail/1">
+            <Link to="/project/detail/0">
                 <h3>Experience..</h3>
                 <p>Making a Website from scrach by your-self is really pain 😁 but at the same time it is really 
                     Fascinating and Exciting. 😍🤩</p>

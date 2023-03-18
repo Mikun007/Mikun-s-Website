@@ -113,11 +113,45 @@ projects_1 = [
     },
     {
         "id": 2,
-        "header": "Dummy",
+        "header": "Side_Bar and FAQ",
         "class_name": "big",
-        "image_path": "static/images/image_1.png",
-        "intro": "This is a dummy part will not show anything",
-        "main": "<h1>None</h1>"
+        "image_path": "static/images/sideBar-FAQ.png",
+        "intro": "my side bar and faq project",
+        "main": '<div class="whileNavShown" style="z-index: 1; position: absolute; height: 100%; width: 100%; '
+                'background-color: lightgoldenrodyellow; opacity: 30%; display: none;"></div><nav class="sideNav-faq" '
+                'style="position: absolute;border: 1px solid black;z-index: 2;padding: 0rem 4rem;width: 200px;height: '
+                '100%;background-color: black;color: white;left: -50px;display: none;"><button class="btn '
+                'btn-outline-light" onclick="reverseDisplayNav()" style="position: absolute; right: '
+                '1px;">X</button><div style="margin: 4rem 0rem 2rem '
+                '0rem;"><h1>BD.</h1></div><p>Home</p><p>Cv</p><p>About</p></nav><button onclick="displayNav()" '
+                'class="navShowBtn btn btn-outline-dark"><i class="navShowBtn fa-solid fa-bars"></i></button><div '
+                'class="faq-page"><h1 style="margin: 2rem 0rem;">FAQ.</h1><div class="faq"><h5 class="faq-heading '
+                'meaning-of-life" onclick="faqShown(event)">What is the meaning of life?</h5><p '
+                'class="meaning-of-life-detail">The meaning of life is a highly subjective and personal concept, '
+                'and people often have different ideas about what it means and how to achieve it. Some people believe '
+                'that the meaning of life is to achieve happiness, while others believe that it is to fulfill a '
+                'specific purpose or destiny. Ultimately, the meaning of life is a question that each individual must '
+                'answer for themselves.</p></div><hr><div class="faq"><h5 class="faq-heading ajax" onclick="faqShown('
+                'event)">What is AJAX in JavaScript? </h5><p class="ajax-detail">AJAX (Asynchronous JavaScript and '
+                'XML) is a technique for creating dynamic web pages that update without requiring a full page '
+                'refresh. AJAX allows JavaScript to communicate with a server in the background and update parts of '
+                'the page based on the servers response.</p></div><hr><div class="faq"><h5 class="faq-heading '
+                'callback-function" onclick="faqShown(event)">What is a callback function in JavaScript? </h5><p '
+                'class="callback-function-detail">A callback function is a function that is passed as an argument to '
+                'another function and is executed after some event or task is completed. Callbacks are commonly used '
+                'in JavaScript for asynchronous programming, where one function needs to wait for another function to '
+                'complete before continuing.</p></div><hr></div><script>const sideNav = document.querySelector('
+                '".sideNav-faq");let currentFaq = [];window.addEventListener("click", function(event) {if('
+                'event.target.classList[0] == "navShowBtn") {return;};sideNav.style.display = '
+                '"none";document.querySelector(".whileNavShown").style.display = "none";});function faqShown(event) {'
+                'let theTarget = event.target.classList[1];let details = document.querySelector("." + theTarget + '
+                '"-detail");if (!currentFaq.includes(details)) {details.style.display = "none";currentFaq.push('
+                'details);};if (details.style.display == "none") {details.style.display = '
+                '"block";details.classList.add("ani-detail");} else {details.style.display = "none";};};function '
+                'displayNav() {sideNav.style.display = "block";sideNav.classList.add('
+                '"sideNav-faq-ani");document.querySelector(".whileNavShown").style.display = "block";};function '
+                'reverseDisplayNav() {sideNav.style.display = "none";document.querySelector('
+                '".whileNavShown").style.display = "none";};</script>'
     }
 ]
 
